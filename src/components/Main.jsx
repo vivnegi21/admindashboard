@@ -3,12 +3,13 @@ import SearchBar from './SearchBar';
 import Pagination from './Pagination';
 import TableRow from './TableRow';
 
-const Main = ({ data }) => {
+const Main = ({ data, setData }) => {
     const [filterData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        if (filterData.length === 0) setFilteredData(data);
-    })
+        setFilteredData(data);
+    },[data])
+    
     const handleSearch = (text) => {
         const filteredResults = data.filter((item) => {
             return Object.values(item).some((value) =>
@@ -41,12 +42,12 @@ const Main = ({ data }) => {
     }
 
     const deleteRow = (id) => {
-        setFilteredData(filterData.filter((d) => id !== d.id));
+        setData(data.filter((d) => id !== d.id));
     };
 
     const deleteAll = () => {
-        const updatedArray = filterData.filter((user) => !selectList.includes(user.id));
-        setFilteredData(updatedArray);
+        const updatedArray = data.filter((user) => !selectList.includes(user.id));
+        setData(updatedArray);
         setSelectList([]);
         document.getElementById('SelectAll').value = 'false';
     };

@@ -4,7 +4,10 @@ import React, { useState } from 'react'
 const SearchBar = ({ handleSearch,selectList,deleteAll }) => {
     const [searchText, setSearchText] = useState();
     const handleKeyPress = (e) => {
-        if (e.key === 'Enter') handleSearch(searchText);
+        if (e.key === 'Enter'){
+            handleSearch(searchText);
+            // setSearchText("");
+        }
     };
 
     return (

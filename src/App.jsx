@@ -17,7 +17,7 @@ const App = () => {
   }, [])
 
   return (
-    <Main data = {data}/>
+    <Main data = {data} setData={setData}/>
   )
 }
 
