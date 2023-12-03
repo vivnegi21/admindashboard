@@ -1,14 +1,14 @@
 import { Search } from 'lucide-react'
 import React, { useState } from 'react'
 
-const SearchBar = ({ handleSearch }) => {
+const SearchBar = ({ handleSearch,selectList,deleteAll }) => {
     const [searchText, setSearchText] = useState();
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') handleSearch(searchText);
     };
 
     return (
-        <div>
+        <div className=' w-full flex px-10 '>
             <div className='search-container'>
                 <input
                     type="text"
@@ -20,6 +20,9 @@ const SearchBar = ({ handleSearch }) => {
 
                 <Search className='searchbar-icon' onClick={() => handleSearch(searchText)} />
             </div>
+            
+            {(selectList.length>0) && (<div className='delete-btn' onClick={deleteAll}>Delete Selected</div>)}
+
         </div>
     )
 }

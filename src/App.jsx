@@ -14,7 +14,6 @@ const App = () => {
         })
         setData(tmp);
       })
-      // .then(value => setData(value))
   }, [])
 
   return (
