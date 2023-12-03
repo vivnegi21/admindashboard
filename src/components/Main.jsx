@@ -87,6 +87,7 @@ const Main = ({ data }) => {
                     </div>
                 </div>
             </div>
+            {/* Pagination */}
             <Pagination
                 numbers={numbers}
                 setCurrentPage={setCurrentPage}
