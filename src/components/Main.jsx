@@ -50,6 +50,7 @@ const Main = ({ data, setData }) => {
         setData(updatedArray);
         setSelectList([]);
         document.getElementById('SelectAll').value = 'false';
+        setCurrentPage(1);
     };
 
 
